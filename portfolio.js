@@ -30,8 +30,7 @@ let changeText = ()=>{
             letter.className ="letter in";
         },340 + i * 80);
     });
-    currentWordIndex = currentWordIndex===maxWordIndex?0 : currentWordIndex+1;
-
+    currentWordIndex = currentWordIndex===maxWordIndex ? 0 : currentWordIndex+1;
 };
 changeText();
 setInterval(changeText,3000)
