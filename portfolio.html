@@ -1,79 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="portfolio.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tricore Developers</title>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="portfolio.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 <body>
-    <!-- header -->
-    <header>
-        <div class="logo"><span>Tricore</span>Developers</div>
-        <ul class="navlist">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#project">Project</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div id="menu-icon"  class='bx bx-menu' ></div>
 
-    </header>
+  <!-- Header -->
+  <header>
+    <div class="logo"><span>Tricore</span>Developers</div>
+    <ul class="navlist">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div id="menu-icon" class="bx bx-menu"></div>
+  </header>
 
-    <!-- Home section -->
-     <section id="home" class="home">
-        <div class="home-content">
-            <h1>Hi,</h1>
-            <div class="change-text">
-                <h3>We're...</h3>
-                <h3>
-                    <span class="word">A&nbsp; trio&nbsp; of&nbsp; Web &nbsp;Designers</span>
-                    <span class="word">Innovators</span>
-                    <span class="word">Problem-Solvers</span>
-                    <span class="word">Developers</span>
-                    <span class="word">Creators</span>
-                    <span class="word">Visionaries</span>
-                    <span class="word">Tech&nbsp;-Enthusiasts</span>
-                </h3>
-            </div>
+  <!-- Home -->
+  <section id="home" class="home">
+    <div class="home-content">
+      <h1>Hi,</h1>
+
+      <div class="change-text">
+        <h3>We're...</h3>
+        <h3>
+          <span class="word">A&nbsp; trio&nbsp; of&nbsp; Web &nbsp;Designers</span>
+          <span class="word">Innovators</span>
+          <span class="word">Problem-Solvers</span>
+          <span class="word">Developers</span>
+          <span class="word">Creators</span>
+          <span class="word">Visionaries</span>
+          <span class="word">Tech&nbsp;-Enthusiasts</span>
+        </h3>
+      </div>
+
+      <p>
+        Three friends united by creativity and technology, turning ideas into impactful digital experiences. From design to development, we craft websites that inspire, engage, and deliver results.
+      </p>
+    </div>
+  </section>
+  <!-- END: Home -->
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2 class="section-title">About Us</h2>
+    <div class="about-content">
+      <p>
+        At Tricore Developers, we are passionate about creating user-friendly and scalable solutions. Our mission is to blend creativity and technical expertise to build meaningful digital products.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2 class="section-title">Our Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="bx bx-code-alt"></i>
+        <h3>Web Development</h3>
+        <p>HTML, CSS, JavaScript, React, Node.js</p>
+      </div>
+      <div class="skill-card">
+        <i class="bx bx-paint"></i>
+        <h3>UI/UX Design</h3>
+        <p>Figma, Adobe XD, Responsive Design</p>
+      </div>
+      <div class="skill-card">
+        <i class="bx bx-cloud"></i>
+        <h3>Cloud & DevOps</h3>
+        <p>AWS, Docker, GitHub Actions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+<section id="project" class="section projects-section">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-grid">
+    <!-- Law Firm -->
+    <article class="project-card">
+      <div class="project-media">
+        <img src="images/Law-firm.jpg" alt="Law-firm Preview" loading="lazy">
+      </div>
+      <div class="project-body">
+        <h3>Law Firm Website</h3>
+        <p>Professional site with services, attorney profiles, FAQs, and secure contact form.</p>
+        <div class="project-meta">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          <!-- <a class="btn-outline" href="https://your-live-demo-url" target="_blank" rel="noopener">Live Demo</a> -->
+
+        </div>
+      </div>
+    </article>
+
+    <!-- Kabaddi Website -->
+    <article class="project-card">
+      <div class="project-media">
+        <img src="images/KabbadiImage.png" alt="KabbadiImage preview" loading="lazy">
+      </div>
+      <div class="project-body">
+        <h3>Kabaddi Academy Website</h3>
+        <p>Dynamic academy website featuring training schedules, player profiles, and event updates.</p>
+        <a class="btn-outline" href="http://kvsacademy.org" target="_blank" rel="noopener">Live Demo</a>
+        <div class="project-meta">
+          <span>Node</span><span>Express</span><span>MongoDB</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Amazon Clone -->
+    <article class="project-card">
+      <div class="project-media">
+        <img src="images/AmazonImg.png" alt="Amazon Clone preview" loading="lazy">
+      </div>
+      <div class="project-body">
+        <h3>Amazon Clone</h3>
+        <p>E-commerce clone with product listing, cart, mock checkout, and authentication.</p>
+        <div class="project-meta">
+          <span>React</span><span>Express/Firebase</span><span>Stripe (test)</span>
+          <!-- <a class="btn-outline" href="https://your-live-demo-url" target="_blank" rel="noopener">Live Demo</a> -->
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+  <!-- Team Section -->
+  <section id="team" class="team-section">
+    <h2 class="section-title">Meet Our Team</h2>
+    <div class="team-box">
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="avatar"><img src="images/ManishImg.jpg" alt="Manish" /></div>
+          <h3 class="name">Manish Beniwal</h3>
+          <div class="btn-box"><a href="#" class="btn">Download Resume</a></div>
+        </article>
+        <article class="team-card">
+          <div class="avatar"><img src="images/MuskanImg.jpg" alt="Muskan" /></div>
+          <h3 class="name">Muskan Shrivastava</h3>
+          <div class="btn-box"><a href="resume/NEw Resume.pdf" class="btn">Download Resume</a></div>
+        </article>
+        <article class="team-card">
+          <div class="avatar"><img src="images/UtsavImg.jpg" alt="Utsav" /></div>
+          <h3 class="name">Utsav Raj</h3>
+          <div class="btn-box"><a href="#" class="btn">Download Resume</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- END: Team -->
+
+  <!-- Contact Section -->
+  <!-- ===== Contact ===== -->
+<section id="contact" class="section contact-section">
+  <h2 class="section-title">Get In Touch</h2>
+  <p class="contact-subtitle">I'd love to hear from you. Whether it’s a project, job opportunity, or just a chat, feel free to reach out!</p>
+  
+  <div class="contact-container">
     
-            <p>Three friends united by creativity and technology, turning ideas into impactful digital experiences.  
-                From design to development, we craft websites that inspire, engage, and deliver results.
-            </p>
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div class="social-icons">
+      <a href="#"><i class="bx bxl-github"></i></a>
+      <a href="#"><i class="bx bxl-linkedin"></i></a>
+      <a href="#"><i class="bx bxl-twitter"></i></a>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:youremail@example.com">youremail@example.com</a>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+91XXXXXXXXXX">+91 7903541905</a>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Bangalore, India</span>
+      </div>
+    </div>
 
-            <div class="info-box">
-                <div class="email-info">
-                    <h5>Emails: </h5>
-                    <span>utsavrajdocx@gmail.com</span>
+    <!-- Contact Form -->
+    <form class="contact-form">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
 
-                </div>
-            </div>
+  </div>
+</section>
 
-            <div class="btn-box">
-                <a href="#" class="btn">Download Resume- Utsav</a>
-                <a href="#" class="btn">Hire me, Now</a>
-            </div>
 
-            <div class="social-icon">
-                <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-                <a href="#"><i class='bx bxl-github'></i></i></a>
-            </div>
-        </div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Tricore Developers. All Rights Reserved.</p>
+  </footer>
 
-        <div class="home-image">
-            <div class="img-box">
-                <img src="images/MuskanImg.jpg" alt="MuskanImg">
-            </div>
-        </div>
-
-     </section>
-
-    <script src="portfolio.js"></script>
+  <!-- JS -->
+  <script src="portfolio.js"></script>
 </body>
 </html>

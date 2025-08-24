@@ -34,3 +34,23 @@ let changeText = ()=>{
 };
 changeText();
 setInterval(changeText,3000)
+
+// Smooth reveal for team cards
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.team-card');
+
+  cards.forEach(c => c.classList.add('reveal'));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '60px 0px', threshold: 0.1 });
+
+  cards.forEach(card => io.observe(card));
+});
+
+// Project JS
