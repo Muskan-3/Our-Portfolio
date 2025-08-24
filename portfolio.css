@@ -201,6 +201,66 @@ a.btn:hover::before { inset: 0 0 0 0; }
 .btn-box a.btn:nth-child(2):hover { color: var(--bg-color); }
 .btn-box a.btn:nth-child(2)::before { background-color: var(--hover-color); }
 
+/* About section */
+.about-section {
+  padding: 100px 50px;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  width: 420px;
+  height: 420px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.about-text {
+  flex: 1;
+  max-width: 650px;
+}
+
+.about-text h3 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.highlight {
+  color: var(--hover-color);
+  font-weight: 600;
+}
+
+.about-text .btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 35px;
+  background: var(--hover-color);
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.about-text .btn:hover {
+  background: #0fd1d5;
+  transform: scale(1.05);
+}
+
 /* project */
 /* ===== Projects Section (balanced size) ===== */
 .projects-section { 
