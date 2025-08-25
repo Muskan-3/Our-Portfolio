@@ -49,40 +49,41 @@ a:focus-visible, button:focus-visible {
 }
 
 /* Custom Cursor */
-/* ===== Advanced Canvas Cursor ===== */
 @media (pointer: fine) {
-  :root{
-    --cursor-accent: var(--hover-color, #12f7ff);
-    --cursor-glow: rgba(18,247,255,.35);
+  :root {
+    --cursor-accent: var(--hover-color, #12ff55);
+    --cursor-glow: rgba(18, 255, 38, 0.65);   /* stronger glow */
+    --cursor-size: 22px;                   /* bigger cursor dot */
+    --cursor-border:4px;                  /* border thickness */
     --cursor-z: 10000;
-    --cursor-label-bg: rgba(20,22,25,.55);
-    --cursor-label-text: #eafcff;
+    --cursor-label-bg: rgba(20,22,25,.75); /* more solid background */
+    --cursor-label-text: #ffffff;          /* pure white text for contrast */
   }
 
   html, body { cursor: none; }
 
-  #cursor-canvas{
+  #cursor-canvas {
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: var(--cursor-z);
   }
 
-  #cursor-label{
+  #cursor-label {
     position: fixed;
     left: 0; top: 0;
     transform: translate(-50%, -180%);
-    font: 500 12px/1.1 Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    padding: 6px 10px;
-    border-radius: 999px;
+    font: 600 13px/1.2 Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    padding: 7px 12px;
+    border-radius: 12px;
     background: var(--cursor-label-bg);
     color: var(--cursor-label-text);
-    letter-spacing: .2px;
+    letter-spacing: .3px;
     opacity: 0;
     pointer-events: none;
     white-space: nowrap;
-    backdrop-filter: blur(226px);
-    box-shadow: 0 0 12px rgba(0,0,0,.15), 0 0 24px var(--cursor-glow);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 16px rgba(0,0,0,.25), 0 0 36px var(--cursor-glow);
     transition: opacity .18s ease, transform .18s ease;
     z-index: calc(var(--cursor-z) + 1);
   }
@@ -91,15 +92,14 @@ a:focus-visible, button:focus-visible {
   .cursor-hidden #cursor-label { opacity: 0 !important; }
 }
 
-/* Inputs/Textareas keep native I‑beam on desktop */
+/* Inputs/Textareas keep native I-beam on desktop */
 input, textarea, [contenteditable="true"] { cursor: text; }
 
 /* Touch devices: keep default */
-@media (pointer: coarse){
+@media (pointer: coarse) {
   html, body { cursor: auto; }
   #cursor-canvas, #cursor-label { display: none; }
 }
-
 
 /* ========== Header / Nav ========== */
 header {
@@ -382,6 +382,43 @@ a.btn:hover::before { inset: 0 0 0 0; }
 .projects-section { 
   padding: 60px 0;
 }
+.projects-intro {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 1s ease-out forwards;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional subtle underline accent effect */
+.projects-intro::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, #12f7ff, #00d4ff);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+  animation: expandLine 1.2s ease-out forwards;
+}
+
+@keyframes expandLine {
+  from { width: 0; opacity: 0; }
+  to { width: 80px; opacity: 1; }
+}
 
 .projects-grid {
   display: grid;
@@ -438,21 +475,6 @@ a.btn:hover::before { inset: 0 0 0 0; }
   line-height: 1.5; 
   font-size: .9rem; 
 }
-
-.project-meta { 
-  display: flex; 
-  gap: 6px; 
-  flex-wrap: wrap; 
-}
-
-.project-meta span {
-  font-size: .75rem; 
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-}
-
 /* Buttons */
 .btn-outline {
   display: inline-block;
