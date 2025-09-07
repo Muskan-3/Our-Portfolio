@@ -22,8 +22,8 @@
 
   --neon-box-shadow:0 0 .5rem #12f7ff;
   --font-neon-text-shadow:
-    0 0 10px rgba(18,247,255,0.3),
-    0 0 20px rgba(18,247,255,0.3),
+    0 0 10px rgba(99, 216, 220, 0.3),
+    0 0 20px rgba(92, 165, 167, 0.3),
     0 0 30px rgba(18,247,255,0.3),
     0 0 40px rgba(18,247,255,0.3),
     0 0 70px rgba(18,247,255,0.3),
@@ -333,11 +333,14 @@ a.btn:hover::before { inset: 0 0 0 0; }
 }
 
 .about-image img {
-  width: 420px;
-  height: 420px;
+  width: 450px;
+  height: 550px;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+.about-image img:hover{
+   box-shadow: 0 16px 55px rgba(23, 30, 223, 0.3);
 }
 
 .about-text {
