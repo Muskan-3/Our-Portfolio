@@ -1,40 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tricore Developers</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="portfolio.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
-<!-- Custom Cursor -->
-<!-- Advanced Cursor Layer -->
- <canvas id="cursor-canvas" aria-hidden="true"></canvas>
-<div id="cursor-label" role="status" aria-live="polite"></div>
-
-
-
 <body>
+
+  <!-- Custom Cursor (hidden on touch devices by CSS) -->
+  <canvas id="cursor-canvas" aria-hidden="true"></canvas>
+  <div id="cursor-label" role="status" aria-live="polite"></div>
 
   <!-- Header -->
   <header>
-    <div class="logo"><span>Tricore</span>Developers</div>
-    <ul class="navlist">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#project">Project</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div id="menu-icon" class="bx bx-menu"></div>
+    <div class="logo" aria-hidden="false"><span>Tricore</span> Developers</div>
+
+    <!-- Nav: use role navigation for clarity -->
+    <nav class="nav-wrapper" aria-label="Main navigation">
+      <ul class="navlist" id="navlist" role="menubar">
+        <li role="none"><a role="menuitem" href="#home">Home</a></li>
+        <li role="none"><a role="menuitem" href="#about">About</a></li>
+        <li role="none"><a role="menuitem" href="#skills">Skills</a></li>
+        <li role="none"><a role="menuitem" href="#project">Project</a></li>
+        <li role="none"><a role="menuitem" href="#team">Team</a></li>
+        <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Menu button for mobile -->
+    <button id="menu-icon" aria-label="Toggle menu" aria-controls="navlist" aria-expanded="false" type="button" class="menu-btn">
+      <i class="bx bx-menu" aria-hidden="true"></i>
+    </button>
   </header>
 
   <!-- Home -->
@@ -42,9 +46,9 @@
     <div class="home-content">
       <h1>Hi,</h1>
 
-      <div class="change-text">
+      <div class="change-text" aria-hidden="false">
         <h3>We're...</h3>
-        <h3>
+        <h3 aria-live="polite">
           <span class="word">A&nbsp; trio&nbsp; of&nbsp; Web &nbsp;Designers</span>
           <span class="word">Innovators</span>
           <span class="word">Problem-Solvers</span>
@@ -116,7 +120,8 @@
         <h3>Frontend Development</h3>
         <p>HTML, CSS, JavaScript, React.js</p>
         <div class="progress">
-          <span style="width: 90%"></span>
+          <!-- data-width is the preferred way to store the final width for JS -->
+          <span data-width="90%"></span>
         </div>
       </div>
 
@@ -126,7 +131,7 @@
         <h3>Backend Development</h3>
         <p>Node.js, Express</p>
         <div class="progress">
-          <span style="width: 85%"></span>
+          <span data-width="85%"></span>
         </div>
       </div>
 
@@ -136,7 +141,7 @@
         <h3>Database</h3>
         <p>MongoDB, SQL</p>
         <div class="progress">
-          <span style="width: 80%"></span>
+          <span data-width="80%"></span>
         </div>
       </div>
 
@@ -146,7 +151,7 @@
         <h3>Cloud Computing</h3>
         <p>AWS, Azure, Docker</p>
         <div class="progress">
-          <span style="width: 75%"></span>
+          <span data-width="75%"></span>
         </div>
       </div>
 
@@ -156,7 +161,7 @@
         <h3>Developer Tools</h3>
         <p>Git, GitHub, VS Code</p>
         <div class="progress">
-          <span style="width: 95%"></span>
+          <span data-width="95%"></span>
         </div>
       </div>
 
@@ -164,15 +169,12 @@
   </div>
 </section>
 
- 
-
   <!-- Projects Section -->
 <section id="project" class="section projects-section">
   <h2 class="section-title">Projects</h2>
   <p class="projects-intro">🚀 Showcasing creativity, innovation, and interactive web experiences.</p>
 
   <div class="projects-grid">
-    <!-- Kabaddi Website -->
     <article class="project-card">
       <div class="project-media">
         <img src="images/KabbadiImage.png" alt="KabbadiImage preview" loading="lazy">
@@ -184,8 +186,7 @@
       </div>
     </article>
 
-      <!-- Law Firm -->
-     <article class="project-card">
+    <article class="project-card">
       <div class="project-media">
         <img src="images/Law-firm.jpg" alt="Law-firm Preview" loading="lazy">
       </div>
@@ -198,34 +199,29 @@
       </div>
     </article>
 
-    <!--Cynthia Ugwu-->
-   <article class="project-card">
-    <div class="project-media">
-      <img src="images/Cynthia Ugwu-Img.jpg" alt="Cynthia Ugwu portfolio preview" loading="lazy">
-    </div>
-    <div class="project-body">
-      <h3>Cynthia Ugwu</h3>
-      <p>A modern, interactive portfolio website inspired by Cynthia Ugwu's design style.</p>
-      <a class="btn-outline" href="https://fsfd.netlify.app" target="_blank" rel="noopener">Live Demo</a>
-    </div>
+    <article class="project-card">
+      <div class="project-media">
+        <img src="images/Cynthia Ugwu-Img.jpg" alt="Cynthia Ugwu portfolio preview" loading="lazy">
+      </div>
+      <div class="project-body">
+        <h3>Cynthia Ugwu</h3>
+        <p>A modern, interactive portfolio website inspired by Cynthia Ugwu's design style.</p>
+        <a class="btn-outline" href="https://fsfd.netlify.app" target="_blank" rel="noopener">Live Demo</a>
+      </div>
     </article>
 
-   <article class="project-card">
-  <div class="project-media">
-    <img src="images/Cuberto-img.jpg" alt="Cuberto website preview" loading="lazy">
-  </div>
-  <div class="project-body">
-    <h3>Cuberto Website</h3>
-    <p>An interactive, smooth animated website inspired by Cuberto's creative web design style.</p>
-    <a class="btn-outline" href="https://fornted.netlify.app" target="_blank" rel="noopener">Live Demo</a>
-  </div>
-  </article>
-
-
-
+    <article class="project-card">
+      <div class="project-media">
+        <img src="images/Cuberto-img.jpg" alt="Cuberto website preview" loading="lazy">
+      </div>
+      <div class="project-body">
+        <h3>Cuberto Website</h3>
+        <p>An interactive, smooth animated website inspired by Cuberto's creative web design style.</p>
+        <a class="btn-outline" href="https://fornted.netlify.app" target="_blank" rel="noopener">Live Demo</a>
+      </div>
+    </article>
   </div>
 </section>
-
 
   <!-- Team Section -->
   <section id="team" class="team-section">
@@ -235,51 +231,47 @@
         <article class="team-card">
           <div class="avatar"><img src="images/ManishImg.jpg" alt="Manish" /></div>
           <h3 class="name">Manish Beniwal</h3>
-          <div class="btn-box"><a href="#" class="btn">Download Resume</a></div>
-          
-        <div class="social-row">
-          <a class="social-btn" href="https://github.com/Manish01137" target="_blank" rel="noopener" aria-label="GitHub">
-            <!-- GitHub SVG -->
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.76.08-.75.08-.75 1.22.09 1.87 1.25 1.87 1.25 1.08 1.86 2.82 1.33 3.51 1.02.11-.79.42-1.33.77-1.64-2.67-.3-5.48-1.34-5.48-5.96 0-1.32.47-2.39 1.24-3.24-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.85 1.24 1.92 1.24 3.24 0 4.63-2.81 5.66-5.49 5.96.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.58A12 12 0 0012 .5z"/></svg>
-          </a>
+          <div class="btn-box"><a href="resume/Manish Resume.pdf" class="btn">Download Resume</a></div>
+          <div class="social-row">
+            <a class="social-btn" href="https://github.com/Manish01137" target="_blank" rel="noopener" aria-label="GitHub">
+              <!-- GitHub SVG -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.76.08-.75.08-.75 1.22.09 1.87 1.25 1.87 1.25 1.08 1.86 2.82 1.33 3.51 1.02.11-.79.42-1.33.77-1.64-2.67-.3-5.48-1.34-5.48-5.96 0-1.32.47-2.39 1.24-3.24-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.85 1.24 1.92 1.24 3.24 0 4.63-2.81 5.66-5.49 5.96.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.58A12 12 0 0012 .5z"/></svg>
+            </a>
 
-          <a class="social-btn" href="https://www.linkedin.com/in/manish-beniwal-07aa7b2a0/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 104.99 8a2.5 2.5 0 00-.01-4.5zM3 9h4v12H3zM9 9h3.8v1.7h.06c.53-1 1.84-2.05 3.79-2.05 4.06 0 4.81 2.67 4.81 6.13V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.74 0-2.01 1.36-2.01 2.75V21H9z"/></svg>
-          </a>
-        </div>
+            <a class="social-btn" href="https://www.linkedin.com/in/manish-beniwal-07aa7b2a0/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 104.99 8a2.5 2.5 0 00-.01-4.5zM3 9h4v12H3zM9 9h3.8v1.7h.06c.53-1 1.84-2.05 3.79-2.05 4.06 0 4.81 2.67 4.81 6.13V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.74 0-2.01 1.36-2.01 2.75V21H9z"/></svg>
+            </a>
+          </div>
         </article>
+
         <article class="team-card">
           <div class="avatar"><img src="images/MuskanImg.jpg" alt="Muskan" /></div>
           <h3 class="name">Muskan Shrivastava</h3>
           <div class="btn-box"><a href="resume/NEw Resume.pdf" class="btn">Download Resume</a></div>
-          
-        <div class="social-row">
-          <a class="social-btn" href="https://github.com/Muskan-3" target="_blank" rel="noopener" aria-label="GitHub">
-            <!-- GitHub SVG -->
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.76.08-.75.08-.75 1.22.09 1.87 1.25 1.87 1.25 1.08 1.86 2.82 1.33 3.51 1.02.11-.79.42-1.33.77-1.64-2.67-.3-5.48-1.34-5.48-5.96 0-1.32.47-2.39 1.24-3.24-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.85 1.24 1.92 1.24 3.24 0 4.63-2.81 5.66-5.49 5.96.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.58A12 12 0 0012 .5z"/></svg>
-          </a>
+          <div class="social-row">
+            <a class="social-btn" href="https://github.com/Muskan-3" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.76.08-.75.08-.75 1.22.09 1.87 1.25 1.87 1.25 1.08 1.86 2.82 1.33 3.51 1.02.11-.79.42-1.33.77-1.64-2.67-.3-5.48-1.34-5.48-5.96 0-1.32.47-2.39 1.24-3.24-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.85 1.24 1.92 1.24 3.24 0 4.63-2.81 5.66-5.49 5.96.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.58A12 12 0 0012 .5z"/></svg>
+            </a>
 
-          <a class="social-btn" href="https://www.linkedin.com/in/muskan-shrivastava-75b9a2250/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 104.99 8a2.5 2.5 0 00-.01-4.5zM3 9h4v12H3zM9 9h3.8v1.7h.06c.53-1 1.84-2.05 3.79-2.05 4.06 0 4.81 2.67 4.81 6.13V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.74 0-2.01 1.36-2.01 2.75V21H9z"/></svg>
-          </a>
-
-        </div>
+            <a class="social-btn" href="https://www.linkedin.com/in/muskan-shrivastava-75b9a2250/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 104.99 8a2.5 2.5 0 00-.01-4.5zM3 9h4v12H3zM9 9h3.8v1.7h.06c.53-1 1.84-2.05 3.79-2.05 4.06 0 4.81 2.67 4.81 6.13V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.74 0-2.01 1.36-2.01 2.75V21H9z"/></svg>
+            </a>
+          </div>
         </article>
+
         <article class="team-card">
           <div class="avatar"><img src="images/UtsavImg.jpg" alt="Utsav" /></div>
           <h3 class="name">Utsav Raj</h3>
-          <div class="btn-box"><a href="#" class="btn">Download Resume</a></div>
-        
-        <div class="social-row">
-          <a class="social-btn" href="https://github.com/utsav-18" target="_blank" rel="noopener" aria-label="GitHub">
-            <!-- GitHub SVG -->
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.76.08-.75.08-.75 1.22.09 1.87 1.25 1.87 1.25 1.08 1.86 2.82 1.33 3.51 1.02.11-.79.42-1.33.77-1.64-2.67-.3-5.48-1.34-5.48-5.96 0-1.32.47-2.39 1.24-3.24-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.85 1.24 1.92 1.24 3.24 0 4.63-2.81 5.66-5.49 5.96.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.58A12 12 0 0012 .5z"/></svg>
-          </a>
+          <div class="btn-box"><a href="resume/Utsav rsume.pdf" class="btn">Download Resume</a></div>
+          <div class="social-row">
+            <a class="social-btn" href="https://github.com/utsav-18" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.76.08-.75.08-.75 1.22.09 1.87 1.25 1.87 1.25 1.08 1.86 2.82 1.33 3.51 1.02.11-.79.42-1.33.77-1.64-2.67-.3-5.48-1.34-5.48-5.96 0-1.32.47-2.39 1.24-3.24-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.85 1.24 1.92 1.24 3.24 0 4.63-2.81 5.66-5.49 5.96.43.37.82 1.1.82 2.22v3.3c0 .32.22.7.83.58A12 12 0 0012 .5z"/></svg>
+            </a>
 
-          <a class="social-btn" href="https://www.linkedin.com/in/utsav-raj-324b2b2a2/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 104.99 8a2.5 2.5 0 00-.01-4.5zM3 9h4v12H3zM9 9h3.8v1.7h.06c.53-1 1.84-2.05 3.79-2.05 4.06 0 4.81 2.67 4.81 6.13V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.74 0-2.01 1.36-2.01 2.75V21H9z"/></svg>
-          </a>
-        </div>
+            <a class="social-btn" href="https://www.linkedin.com/in/utsav-raj-324b2b2a2/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 104.99 8a2.5 2.5 0 00-.01-4.5zM3 9h4v12H3zM9 9h3.8v1.7h.06c.53-1 1.84-2.05 3.79-2.05 4.06 0 4.81 2.67 4.81 6.13V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.74 0-2.01 1.36-2.01 2.75V21H9z"/></svg>
+            </a>
+          </div>
         </article>
       </div>
     </div>
@@ -287,7 +279,7 @@
   <!-- END: Team -->
 
 <!-- contact -->
-<!-- CONTACT -->
+<!-- contact -->
 <section id="contact" class="contact-section">
   <div class="container contact-wrap">
     <div class="contact-head">
@@ -296,19 +288,24 @@
     </div>
 
     <div class="contact-grid">
-      <!-- Form -->
-      <form id="contactForm" class="contact-card" novalidate>
+      <!-- Form: add data-endpoint="https://your-form-endpoint.example/submit" to POST to a server -->
+      <form id="contactForm" class="contact-card" novalidate aria-labelledby="contact-title" data-endpoint="">
+        <h3 id="contact-title" class="visually-hidden">Contact form</h3>
+
+        <!-- Honeypot (hidden for humans, visible to bots) -->
+        <input type="text" name="_honeypot" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
         <div class="form-row">
           <div class="form-field">
             <label for="name">Full Name</label>
-            <input id="name" name="name" type="text" placeholder="Jane Doe" required />
-            <small class="error" data-error-for="name"></small>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required aria-required="true" aria-describedby="err-name" />
+            <small id="err-name" class="error" data-error-for="name"></small>
           </div>
 
           <div class="form-field">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="jane@company.com" required />
-            <small class="error" data-error-for="email"></small>
+            <input id="email" name="email" type="email" placeholder="jane@company.com" required aria-required="true" aria-describedby="err-email" />
+            <small id="err-email" class="error" data-error-for="email"></small>
           </div>
         </div>
 
@@ -322,37 +319,42 @@
               inputmode="tel"
               placeholder="+91 98765 43210"
               pattern="^(\+?\d{1,3}[- ]?)?\d{10}$"
-              required
+              aria-describedby="hint-phone err-phone"
             />
-            <small class="hint">Format: 10 digits (optional +country code)</small>
-            <small class="error" data-error-for="phone"></small>
+            <small id="hint-phone" class="hint">Format: 10 digits (optional +country code)</small>
+            <small id="err-phone" class="error" data-error-for="phone"></small>
           </div>
 
           <div class="form-field">
             <label for="subject">Subject</label>
-            <input id="subject" name="subject" type="text" placeholder="Project inquiry" required />
-            <small class="error" data-error-for="subject"></small>
+            <input id="subject" name="subject" type="text" placeholder="Project inquiry" required aria-required="true" aria-describedby="err-subject" />
+            <small id="err-subject" class="error" data-error-for="subject"></small>
           </div>
         </div>
 
         <div class="form-field">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us about your project…" required></textarea>
-          <small class="error" data-error-for="message"></small>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your project…" required aria-required="true" aria-describedby="err-message"></textarea>
+          <small id="err-message" class="error" data-error-for="message"></small>
         </div>
 
         <label class="checkbox">
-          <input id="consent" name="consent" type="checkbox" required />
+          <input id="consent" name="consent" type="checkbox" required aria-required="true" />
           <span>I agree to be contacted about my request.</span>
         </label>
         <small class="error" data-error-for="consent"></small>
 
-        <button type="submit" class="btn btn-primary" aria-label="Send message">Send Message</button>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" aria-live="polite" id="contactSubmit">
+            <span class="btn-text">Send Message</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+
         <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
       </form>
-
-      <!-- Contact details + perfectly placed socials -->
-      <aside class="contact-card details-card">
+      <!-- Contact details + socials (unchanged) -->
+      <aside class="contact-card details-card" aria-label="Contact details">
         <h3>Get in touch</h3>
         <ul class="contact-list">
           <li>
@@ -361,18 +363,18 @@
           </li>
           <li>
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z" fill="none"/><path d="M20 8l-8 5-8-5V6l8 5 8-5z"/></svg>
-            <a href="mailto:hello@yourdomain.com">utsavrajdocx@gmil.com</a>
+            <a href="mailto:utsavrajdocx@gmil.com">utsavrajdocx@gmil.com</a>
           </li>
           <li>
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 17h-2v-6H8v-2h3V8.5A3.5 3.5 0 0114.5 5h1.5v2h-1.5A1.5 1.5 0 0013 8.5V11h3l-.5 2H13v6z"/></svg>
             Bangalore, India
           </li>
         </ul>
-
       </aside>
     </div>
   </div>
 </section>
+
 
   <!-- Footer -->
   <footer>
@@ -380,6 +382,6 @@
   </footer>
 
   <!-- JS -->
-  <script src="portfolio.js"></script>
+  <script src="portfolio.js" defer></script>
 </body>
 </html>
