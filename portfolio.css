@@ -378,7 +378,7 @@ a.btn:hover::before { inset: 0 0 0 0; }
 .about-text .btn:hover { transform: scale(1.02); }
 
  /* Projects */
-.projects-section { padding: 40px 0; }
+.projects-section { padding: 60px 0; }
 .projects-intro {
   font-size: 1.05rem;
   font-weight: 500;
@@ -389,7 +389,7 @@ a.btn:hover::before { inset: 0 0 0 0; }
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
   gap: 28px;
   padding: 28px;
 }
@@ -706,4 +706,200 @@ footer { text-align: center; padding: 26px 8%; color: #bdbdbd; font-size: .9rem;
   .team-card { width: 220px; padding: 14px; }
   .avatar img { width: 120px; height: 120px; }
   .social-btn { width: 40px; height: 40px; }
+}
+/* -----------------------------
+   Responsive rules — Home (hero)
+   Append this at the end of portfolio.css
+   ----------------------------- */
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  /* header & nav */
+  header {
+    padding: 12px 6%;
+  }
+  .menu-btn {
+    display: inline-flex; /* show mobile menu button */
+  }
+  .navlist {
+    /* keep nav hidden by default on mobile; JS should toggle .show */
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 6%;
+    flex-direction: column;
+    width: min(92%, 320px);
+    gap: 8px;
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(37,8,33,0.98), rgba(26,26,26,0.97));
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  }
+  .navlist.show { display: flex; }
+
+  /* reduce section paddings for smaller screens */
+  section { padding: 48px 6%; }
+
+  /* home / hero */
+  .home {
+    min-height: calc(100vh - 72px); /* slightly smaller on mobile header */
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .home-content {
+    max-width: 92%;
+    padding: 0;
+  }
+  .home-content h1 {
+    font-size: clamp(1.6rem, 8.5vw, 2.6rem); /* scale down headline */
+    line-height: 1.12;
+  }
+  .change-text {
+    font-size: clamp(1.05rem, 5.5vw, 1.6rem);
+    margin: .2rem 0 .9rem;
+    min-height: 1.25em;
+  }
+  .change-text h3 .word { white-space: nowrap; left: 50%; transform: translateX(-50%); } /* keep words centered */
+  .home-content p {
+    font-size: clamp(.9rem, 3.8vw, .98rem);
+    margin-top: .45rem;
+  }
+}
+/* -----------------------------
+  Fix for overlapping rotating words
+  Append this to the end of portfolio.css
+   - centers the changing words
+   - reserves vertical space so words don't overlap headline or paragraph
+   - preserves per-letter animation classes (.in .out .behind)
+----------------------------- */
+
+/* Ensure the change-text area reserves enough height and centers content */
+.home-content h1 {
+  margin-bottom: 10px; /* increase separation between headline and rotating words */
+}
+/* Make the change-text container a block-level centered element */
+.change-text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  min-height: 4em;              /* increased to prevent overlap */
+  line-height: 1;
+  position: relative;
+  margin: 0.8rem 0 1.6rem;        /* more spacing from H1 */
+}
+
+/* Keep the h3 as an inline-block that can hold absolutely positioned .word children */
+.change-text h3 {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+  width: 100%;                    /* ensure full width for centering */
+}
+
+/* Position each rotating word centered inside the reserved area */
+.change-text h3 .word {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  width: max-content;
+  transition: opacity .32s ease, transform .32s ease;
+}
+
+/* Letter animation smoother */
+.change-text h3 .word .letter {
+  display: inline-block;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Keep the 'behind' word hidden before it animates in */
+.change-text h3 .word .letter.behind {
+  transform: rotateX(-90deg);
+}
+
+/* Extra responsiveness */
+@media (max-width: 480px) {
+  .change-text {
+    min-height: 3.8em;           /* extra breathing room for long words */
+    margin: 0.6rem 0 1.4rem;
+  }
+}
+
+/* Slightly reduce the size of the rotating text on very narrow screens to avoid wrap */
+@media (max-width: 480px) {
+  .change-text { min-height: 2.8em; } /* allow for taller letters */
+  .change-text h3 .word { top: 52%; } /* small tweak to vertical centering */
+  .change-text { font-size: clamp(0.95rem, 4.6vw, 1.45rem); }
+}
+
+/* very small devices */
+@media (max-width: 360px) {
+  .home-content h1 { margin-bottom: 8px; }
+  .change-text { min-height: 2.6em; font-size: 1rem; }
+}
+
+
+/* Phones (portrait) */
+@media (max-width: 480px) {
+  header {
+    padding: 10px 5%;
+    backdrop-filter: blur(10px);
+  }
+  .logo { font-size: 17px; }
+
+  .home {
+    min-height: calc(100vh - 68px);
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .home-content {
+    max-width: 96%;
+  }
+  .home-content h1 {
+    font-size: clamp(1.4rem, 9.5vw, 2.2rem);
+    margin-bottom: .2rem;
+  }
+  .change-text {
+    font-size: clamp(.98rem, 6.8vw, 1.45rem);
+    margin: .18rem 0 .8rem;
+    min-height: 1.35em;
+  }
+  .change-text h3 .word { left: 50%; transform: translateX(-50%); } /* center words precisely */
+  .home-content p {
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+
+  /* make navlist overlay full-width if desired on very small screens */
+  .navlist {
+    right: 4%;
+    width: min(94%, 300px);
+  }
+}
+
+/* Very small devices (extra squeeze) */
+@media (max-width: 360px) {
+  .home-content h1 {
+    font-size: clamp(1.2rem, 10.5vw, 1.9rem);
+  }
+  .change-text {
+    font-size: 1rem;
+    min-height: 1.4em;
+  }
+  .home-content p {
+    font-size: .92rem;
+  }
+  header { padding: 10px 4%; }
+  .logo { font-size: 16px; }
 }
